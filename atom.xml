@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>乔治的恐龙窝</title>
   
   
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://qz1314233.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>乔治</name>
     
   </author>
   
