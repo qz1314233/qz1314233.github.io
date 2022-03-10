@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qz1314233.github.io/2022/03/09/hello-world/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qz1314233.github.io/repository/index.html</loc>
     
     <lastmod>2022-03-10</lastmod>
@@ -59,15 +68,6 @@
     <loc>https://qz1314233.github.io/404.html</loc>
     
     <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qz1314233.github.io/2022/03/09/hello-world/</loc>
-    
-    <lastmod>1985-10-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
