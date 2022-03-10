@@ -6,7 +6,7 @@
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
   
   <link href="https://qz1314233.github.io/"/>
-  <updated>2022-03-10T03:27:15.441Z</updated>
+  <updated>2022-03-10T15:54:13.761Z</updated>
   <id>https://qz1314233.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动态规划·算法</title>
+    <link href="https://qz1314233.github.io/2022/03/10/%E7%AE%97%E6%B3%951/"/>
+    <id>https://qz1314233.github.io/2022/03/10/%E7%AE%97%E6%B3%951/</id>
+    <published>2022-03-10T15:54:19.589Z</published>
+    <updated>2022-03-10T15:54:13.761Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="动态规划"><a class="markdownIt-Anchor" href="#动态规划"></a> 动态规划</h1><h2 id="n阶矩阵连乘问题"><a class="markdownIt-Anchor" href="#n阶矩阵连乘问题"></a> N阶矩阵连乘问题</h2><blockquote><p>规模为1时，不用运算，初始状态,乘法次数为0&gt;第一个阶段:依据初始状态,计算2个矩阵相乘的最少乘法次数,做出决策。<br />第二个阶段:依据第一阶段计算的结果计算3个矩阵相乘的最少乘法次数,做决策。<br />以此类推,直到最后一个阶段得到n个矩阵连乘最少计算次数，做决策。</p></blockquote><h2 id="动态规划的基本思想"><a class="markdownIt-Anchor" href="#动态规划的基本思想"></a> 动态规划的基本思想</h2><blockquote><p>(1）经分解得到的各个子问题往往不是相互独立的。&gt;比如:A:AzA3与AzA3A4有共同的子问题A2A3<br />(2)在求解过程中,将已解决的子问题的最优值进行保存，在需要时可以轻松找出。<br />(3）通常采用表的形式记录子问题的最优值,即在实际求解过程中，一旦某个子问题被计算过，不管该问题以后是否用得到，都将其计算结果填入该表，需要的时候就从表中找出该子问题的最优值。<br />(4）根据最优值,记录最优决策,构造最优解。</p></blockquote><h2 id="动态规划的解题步骤"><a class="markdownIt-Anchor" href="#动态规划的解题步骤"></a> 动态规划的解题步骤</h2><blockquote><p>(1）分析最优解的性质,刻画最优解的结构特征——考察是否适合采用动态规划法。<br />(2）递归定义最优值（即建立递归式或动态规划方程）。<br />(3）以自底向上的方式计算出最优值,并记录相关信息。</p></blockquote><h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1><h2 id="最长公共子序列问题"><a class="markdownIt-Anchor" href="#最长公共子序列问题"></a> 最长公共子序列问题</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;动态规划&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#动态规划&quot;&gt;&lt;/a&gt; 动态规划&lt;/h1&gt;
+&lt;h2 id=&quot;n阶矩阵连乘问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#n阶矩阵连乘问题&quot;&gt;&lt;/a&gt; </summary>
+      
+    
+    
+    
+    <category term="乔治的Java笔记" scheme="https://qz1314233.github.io/categories/%E4%B9%94%E6%B2%BB%E7%9A%84Java%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="算法" scheme="https://qz1314233.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="https://qz1314233.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java的数据类型要点</title>
+    <link href="https://qz1314233.github.io/2022/03/10/%E6%AF%8F%E6%97%A5java2/"/>
+    <id>https://qz1314233.github.io/2022/03/10/%E6%AF%8F%E6%97%A5java2/</id>
+    <published>2022-03-10T15:53:23.058Z</published>
+    <updated>2022-03-10T15:53:19.631Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="类型转换"><a class="markdownIt-Anchor" href="#类型转换"></a> <strong>类型转换</strong></h2><p>强制转换：高到低 （类型）变量名</p><p>自动转换：低到高</p><p>注意点：</p><p>不能对boolean类型进行转换<br />不能把对象转换为不相干的类型<br />高容量到低容量，要强制转换<br />强制转换可能会出现内存溢出或精度问题<br />JDK7: 可以在数字间加“_”把数位较多的数分隔开</p><h2 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h2><p>三种作用域<br />类变量：从属于类，加上static关键字，可以直接使用</p><p>实例变量：从属于对象，如果不进行初始化，则会使用默认值 0，0.0，false，null；</p><p>局部变量：作用域在方法内部的变量，必须声明和初始化值。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;类型转换&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#类型转换&quot;&gt;&lt;/a&gt; &lt;strong&gt;类型转换&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;强制转换：高到低 （类型）变量名&lt;/p&gt;
+&lt;p&gt;自动转换：低到高&lt;/p&gt;
+&lt;p&gt;注意点：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Zeta的Java笔记" scheme="https://qz1314233.github.io/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JAVA" scheme="https://qz1314233.github.io/tags/JAVA/"/>
+    
+    <category term="数据类型" scheme="https://qz1314233.github.io/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Java的两大类数据类型</title>
