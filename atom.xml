@@ -6,7 +6,7 @@
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
   
   <link href="https://qz1314233.github.io/"/>
-  <updated>2022-03-10T00:57:51.600Z</updated>
+  <updated>2022-03-10T03:21:29.202Z</updated>
   <id>https://qz1314233.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java的两大类数据类型</title>
+    <link href="https://qz1314233.github.io/2022/03/10/%E6%AF%8F%E6%97%A5java/"/>
+    <id>https://qz1314233.github.io/2022/03/10/%E6%AF%8F%E6%97%A5java/</id>
+    <published>2022-03-10T03:21:45.109Z</published>
+    <updated>2022-03-10T03:21:29.202Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h2><h3 id="基本数据类型primive-type"><a class="markdownIt-Anchor" href="#基本数据类型primive-type"></a> 基本数据类型（Primive Type）</h3><h4 id="数值类型"><a class="markdownIt-Anchor" href="#数值类型"></a> 数值类型</h4><h5 id="整数类型"><a class="markdownIt-Anchor" href="#整数类型"></a> 整数类型</h5><p>byte：占1个字节范围    -128~127</p><p>short：占2个字节范围    -32768~32767</p><p>int（最常用）：占4个字节范围    -2147483648~2147483647（约正负21亿）</p><p>long（在数字后加L区分）：占8个字节范围    （太长，约-9x10<sup>18~9x10</sup>18)</p><p><strong>以上数值范围均可以在对应的类的源码中找到</strong></p><h5 id="浮点类型"><a class="markdownIt-Anchor" href="#浮点类型"></a> 浮点类型</h5><p>float（在数字后加F区分）：占4个字节</p><p>double：占8个字节</p><p>浮点数是有限、离散的，在数位较多时只能近似表示但不能完全相等，所以**<u>最好完全避免浮点数之间的比较</u>**</p><h5 id="字符类型"><a class="markdownIt-Anchor" href="#字符类型"></a> 字符类型</h5><p>char：占2个字节</p><p><strong>字符的本质是数字（ASCII码）</strong></p><p>编码从U0000到UFFFF（16进制）</p><h6 id="转义字符"><a class="markdownIt-Anchor" href="#转义字符"></a> <strong>转义字符</strong></h6><p>\t 水平制表符</p><p>\n 换行符 ，将当前位置移到下一行行开头</p><p>\\ 表示一个“\” （\&quot;,\'同理）</p><h4 id="boolean类型"><a class="markdownIt-Anchor" href="#boolean类型"></a> boolean类型</h4><p>boolean：占1位，其值只有true和false</p><h3 id="引用数据类型reference-type"><a class="markdownIt-Anchor" href="#引用数据类型reference-type"></a> 引用数据类型（Reference Type）</h3><p>类</p><p>接口</p><p>数组</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据类型&quot;&gt;&lt;/a&gt; 数据类型&lt;/h2&gt;
+&lt;h3 id=&quot;基本数据类型primive-type&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本数据类</summary>
+      
+    
+    
+    
+    <category term="赵杰" scheme="https://qz1314233.github.io/categories/%E8%B5%B5%E6%9D%B0/"/>
+    
+    
+    <category term="JAVA" scheme="https://qz1314233.github.io/tags/JAVA/"/>
+    
+    <category term="数据类型" scheme="https://qz1314233.github.io/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>3月我来了！初入Blog</title>
