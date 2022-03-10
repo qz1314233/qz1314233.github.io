@@ -6,7 +6,7 @@
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
   
   <link href="https://qz1314233.github.io/"/>
-  <updated>2022-03-10T00:52:25.854Z</updated>
+  <updated>2022-03-10T00:57:51.600Z</updated>
   <id>https://qz1314233.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://qz1314233.github.io/2022/03/09/hello-world/"/>
     <id>https://qz1314233.github.io/2022/03/09/hello-world/</id>
     <published>2022-03-09T10:48:08.705Z</published>
-    <updated>2022-03-10T00:52:25.854Z</updated>
+    <updated>2022-03-10T00:57:51.600Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎来到乔治的恐龙窝，此博客用于记录开发过程，以及发布结果！</p><h2 id="快速开始"><a class="markdownIt-Anchor" href="#快速开始"></a> 快速开始</h2><h3 id="简言"><a class="markdownIt-Anchor" href="#简言"></a> 简言</h3><p>人生的高度，一半始于努力，一半源自选择，相信每一次的巧合，都必定有你的努力！早安！新的一月，加油！</p><h3 id="内容板块"><a class="markdownIt-Anchor" href="#内容板块"></a> 内容板块</h3><p>1.MC项目开发进度及心得<br />2.在校课程知识结构<br />3.算法<br />4.日记（看心情写）<br />5.项目工程介绍</p><h3 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>) </span><br><span class="line">System.out.println(<span class="string">&quot;hello wold&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,6 +34,8 @@
       
     
     
+    
+    <category term="毫无用处" scheme="https://qz1314233.github.io/categories/%E6%AF%AB%E6%97%A0%E7%94%A8%E5%A4%84/"/>
     
     
     <category term="测试" scheme="https://qz1314233.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
