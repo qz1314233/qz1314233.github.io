@@ -6,7 +6,7 @@
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
   
   <link href="https://qz1314233.github.io/"/>
-  <updated>2022-03-10T15:54:13.761Z</updated>
+  <updated>2022-03-11T04:27:13.191Z</updated>
   <id>https://qz1314233.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java运算符</title>
+    <link href="https://qz1314233.github.io/2022/03/11/%E7%AC%94%E8%AE%B02/"/>
+    <id>https://qz1314233.github.io/2022/03/11/%E7%AC%94%E8%AE%B02/</id>
+    <published>2022-03-11T04:23:42.968Z</published>
+    <updated>2022-03-11T04:27:13.191Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="运算符"><a class="markdownIt-Anchor" href="#运算符"></a> 运算符</h2><h3 id="二元运算符"><a class="markdownIt-Anchor" href="#二元运算符"></a> 二元运算符</h3><h4 id="四则运算"><a class="markdownIt-Anchor" href="#四则运算"></a> 四则运算</h4><p>+、-、*、/</p><p>除法可能出现浮点数，需要先转换为double</p><p>不同数值类型进行运算时，有double结果为double，否则有long结果为long，否则结果都为int</p><h4 id="关系运算"><a class="markdownIt-Anchor" href="#关系运算"></a> 关系运算</h4><p>&gt;,&lt;,==,!=…(返回结果是布尔值true或false)</p><h4 id="模运算"><a class="markdownIt-Anchor" href="#模运算"></a> 模运算</h4><p>% 即求余运算</p><h3 id="一元运算符"><a class="markdownIt-Anchor" href="#一元运算符"></a> 一元运算符</h3><p>++，–自增，自减</p><p>a++ 先操作，再自增</p><p>++a 先自增，再操作</p><p><strong>工具类Math类中的pow幂运算</strong></p><h3 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符"></a> 逻辑运算符</h3><p>与（&amp;）、 或（|）、 非(!)</p><h3 id="短路运算"><a class="markdownIt-Anchor" href="#短路运算"></a> 短路运算</h3><p>短路与（&amp;&amp;）：若前面布尔值为假，则直接返回false，不进行后面的操作</p><p>短路或（||）：若前面布尔值为真，则直接返回true，不进行后面的操作</p><p>用短路运算能 减少不必要的运算过程</p><h3 id="位运算"><a class="markdownIt-Anchor" href="#位运算"></a> 位运算</h3><p>&amp;|<sup>~(</sup>为异或位运算，不同为1，相同为0)</p><p>&lt;&lt;相当于*2，&gt;&gt;相当于/2,</p><p>位运算效率极高！</p><h3 id="字符串拼接符"><a class="markdownIt-Anchor" href="#字符串拼接符"></a> 字符串拼接符</h3><p>+</p><p>当&quot;+&quot;左右有一个为String类型时，另一个也会转换为String类型进行拼接</p><h3 id="三目运算符"><a class="markdownIt-Anchor" href="#三目运算符"></a> 三目运算符</h3><p>x ？y：z</p><p>若x为真，则返回y，否则返回z</p><p>–&gt; x==true ？</p><p>–&gt; y（是的）：z（不是）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;运算符&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#运算符&quot;&gt;&lt;/a&gt; 运算符&lt;/h2&gt;
+&lt;h3 id=&quot;二元运算符&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#二元运算符&quot;&gt;&lt;/a&gt; 二元运算符&lt;/h3</summary>
+      
+    
+    
+    
+    <category term="Zeta的Java笔记" scheme="https://qz1314233.github.io/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JAVA" scheme="https://qz1314233.github.io/tags/JAVA/"/>
+    
+    <category term="运算符" scheme="https://qz1314233.github.io/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划·算法</title>
