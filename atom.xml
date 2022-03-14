@@ -6,7 +6,7 @@
   <link href="https://qz1314233.github.io/atom.xml" rel="self"/>
   
   <link href="https://qz1314233.github.io/"/>
-  <updated>2022-03-11T04:27:13.191Z</updated>
+  <updated>2022-03-14T00:03:39.245Z</updated>
   <id>https://qz1314233.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java的包机制、JavaDoc命令、用户交互Scanner</title>
+    <link href="https://qz1314233.github.io/2022/03/14/%E7%AC%94%E8%AE%B03/"/>
+    <id>https://qz1314233.github.io/2022/03/14/%E7%AC%94%E8%AE%B03/</id>
+    <published>2022-03-14T00:03:51.268Z</published>
+    <updated>2022-03-14T00:03:39.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="包机制"><a class="markdownIt-Anchor" href="#包机制"></a> 包机制</h2><p>包的本质，就是文件夹</p><p><strong>一般用公司域名倒置作为包名</strong></p><p>&quot;*&quot;通配符，可导入包中所有类</p><h2 id="javadoc"><a class="markdownIt-Anchor" href="#javadoc"></a> JavaDoc</h2><p>JavaDoc命令是用来生成自己的API文档的</p><blockquote><p>参数信息</p><ol><li>@author：作者名</li><li>@version：版本号</li><li>@since：jdk版本</li><li>@param：参数</li><li>@return：返回值</li><li>@throws：异常</li></ol></blockquote><p>用cmd命令生成或用IDEA生成javadoc文档</p><h2 id="用户交互scanner"><a class="markdownIt-Anchor" href="#用户交互scanner"></a> 用户交互：Scanner</h2><p>通过Scanner类来获取用户的输入</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//创建一个Scanner对象，启动输入</span></span><br><span class="line">...</span><br><span class="line">sc.close();<span class="comment">//关闭，释放资源</span></span><br></pre></td></tr></table></figure><h3 id="两种接收方式next-nextline"><a class="markdownIt-Anchor" href="#两种接收方式next-nextline"></a> 两种接收方式：next()、nextLine()</h3><p>next():       空格分隔，一个一个扫描**</p><ol><li>一定要读取到有效字符后才可以结束输入</li><li>对输入有效字符之前的空白，next()方法会自动将其去掉</li><li>只有输入有效字符后才会将后面的空白作为分隔符或结束符</li><li><strong>next()不能得到带有空格的字符串</strong></li></ol><p>nextLine():     <strong>回车键分隔，一行一行扫描</strong></p><ol><li>以Enter键分隔，即nextLine()返回的是输入回车键之前所有的字符</li><li>可以获得带空格的字符串</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sc.next();<span class="comment">//获取输入，空格分隔</span></span><br><span class="line">sc.nextLine();<span class="comment">//获取输入，Enter分隔</span></span><br></pre></td></tr></table></figure><h3 id="数值操作"><a class="markdownIt-Anchor" href="#数值操作"></a> 数值操作</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Scanner里面的一些方法：</span></span><br><span class="line">nextInt();</span><br><span class="line">nextFloat();</span><br><span class="line">...</span><br></pre></td></tr></table></figure><blockquote><p>在IDEA的左下角点击<strong>Structure</strong>可以查看类的结构，一般用来查看源码里的方法</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;包机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#包机制&quot;&gt;&lt;/a&gt; 包机制&lt;/h2&gt;
+&lt;p&gt;包的本质，就是文件夹&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一般用公司域名倒置作为包名&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;quot;*&amp;quot;</summary>
+      
+    
+    
+    
+    <category term="Zeta的Java笔记" scheme="https://qz1314233.github.io/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="JAVA" scheme="https://qz1314233.github.io/tags/JAVA/"/>
+    
+    <category term="包机制、JavaDoc、Scanner" scheme="https://qz1314233.github.io/tags/%E5%8C%85%E6%9C%BA%E5%88%B6%E3%80%81JavaDoc%E3%80%81Scanner/"/>
+    
+  </entry>
   
   <entry>
     <title>Java运算符</title>
