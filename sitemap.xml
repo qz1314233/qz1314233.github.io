@@ -170,7 +170,21 @@
   </url>
   
   <url>
-    <loc>https://qz1314233.github.io/tags/%E5%8C%85%E6%9C%BA%E5%88%B6%E3%80%81JavaDoc%E3%80%81Scanner/</loc>
+    <loc>https://qz1314233.github.io/tags/%E5%8C%85%E6%9C%BA%E5%88%B6%E3%80%81/</loc>
+    <lastmod>2022-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qz1314233.github.io/tags/JavaDoc/</loc>
+    <lastmod>2022-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qz1314233.github.io/tags/Scanner/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
