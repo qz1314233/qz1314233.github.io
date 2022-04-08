@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>C#上机三 | 乔治的恐龙窝</title>
+  <meta name="description" content="C#上机三 1．请定义一个交通工具(Vehicle)的类，其中有: ⦁ 属性：速度(speed)，体积(size); ⦁ 方法：移动(move())，设置速度(setSpeed(int speed))，设置体积（setSize(int size)）加速speedUp(),减速speedDown(); 在测试类Vehicle中的main()中实例化一个交通工具对象，通过方法给它初始化speed,s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#上机三">
+<meta property="og:url" content="https://qz1314233.github.io/2022/04/08/c1/index.html">
+<meta property="og:site_name" content="乔治的恐龙窝">
+<meta property="og:description" content="C#上机三 1．请定义一个交通工具(Vehicle)的类，其中有: ⦁ 属性：速度(speed)，体积(size); ⦁ 方法：移动(move())，设置速度(setSpeed(int speed))，设置体积（setSize(int size)）加速speedUp(),减速speedDown(); 在测试类Vehicle中的main()中实例化一个交通工具对象，通过方法给它初始化speed,s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-08T04:28:21.645Z">
+<meta property="article:modified_time" content="2022-04-08T04:34:35.204Z">
+<meta property="article:author" content="乔治">
+<meta property="article:tag" content="C#上机作业">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://qz1314233.github.io/2022/04/08/c1/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="乔治的恐龙窝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/qz1314233" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">爱吃乔治的恐龙</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">在校学生 &amp; 技术菜鸟</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 苏州科技大学, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qz1314233" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验! QQ：1557447306</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/">Zeta的Java笔记</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/">上机作业</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%94%E6%B2%BB%E7%9A%84Java%E7%AC%94%E8%AE%B0/">乔治的Java笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AF%AB%E6%97%A0%E7%94%A8%E5%A4%84/">毫无用处</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/" rel="tag">C#上机作业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaDoc/" rel="tag">JavaDoc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scanner/" rel="tag">Scanner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E6%9C%BA%E5%88%B6%E3%80%81/" rel="tag">包机制、</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">运算符</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/C-%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/" style="font-size: 13px;">C#上机作业</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/JavaDoc/" style="font-size: 13px;">JavaDoc</a> <a href="/tags/Scanner/" style="font-size: 13px;">Scanner</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 13px;">动态规划</a> <a href="/tags/%E5%8C%85%E6%9C%BA%E5%88%B6%E3%80%81/" style="font-size: 13px;">包机制、</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 13.5px;">数据类型</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13px;">算法</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 13px;">运算符</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/">上机作业</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/08/c1/" class="title">C#上机三</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-08T04:28:21.645Z" itemprop="datePublished">2022-04-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/">Zeta的Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/14/%E7%AC%94%E8%AE%B03/" class="title">Java的包机制、JavaDoc命令、用户交互Scanner</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-14T00:03:51.268Z" itemprop="datePublished">2022-03-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/">Zeta的Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/11/%E7%AC%94%E8%AE%B02/" class="title">Java运算符</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-11T04:23:42.968Z" itemprop="datePublished">2022-03-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%B9%94%E6%B2%BB%E7%9A%84Java%E7%AC%94%E8%AE%B0/">乔治的Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/10/%E7%AE%97%E6%B3%951/" class="title">动态规划·算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-10T15:54:19.589Z" itemprop="datePublished">2022-03-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Zeta%E7%9A%84Java%E7%AC%94%E8%AE%B0/">Zeta的Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/10/%E6%AF%8F%E6%97%A5java2/" class="title">Java的数据类型要点</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-10T15:53:23.058Z" itemprop="datePublished">2022-03-10</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-c1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#上机三
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/08/c1/" class="article-date">
+	  <time datetime="2022-04-08T04:28:21.645Z" itemprop="datePublished">2022-04-08</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/">上机作业</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/C-%E4%B8%8A%E6%9C%BA%E4%BD%9C%E4%B8%9A/" rel="tag">C#上机作业</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/08/c1/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="c上机三"><a class="markdownIt-Anchor" href="#c上机三"></a> C#上机三</h1>
+<p>1．请定义一个交通工具(Vehicle)的类，其中有:</p>
+<p>⦁ 属性：速度(speed)，体积(size);</p>
+<p>⦁ 方法：移动(move())，设置速度(setSpeed(int speed))，设置体积（setSize(int size)）加速speedUp(),减速speedDown();</p>
+<p>在测试类Vehicle中的main()中实例化一个交通工具对象，通过方法给它初始化speed,size的值，并打印出来。另外，调用加速，减速的方法对速度进行改变。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="comment">/*1．请定义一个交通工具(Vehicle)的类，其中有: </span></span><br><span class="line"><span class="comment">⦁ 属性：速度(speed)，体积(size);</span></span><br><span class="line"><span class="comment">⦁ 方法：移动(move())，设置速度(setSpeed(int speed))，设置体积（setSize(int size)）加速speedUp(),减速speedDown();</span></span><br><span class="line"><span class="comment">在测试类Vehicle中的main()中实例化一个交通工具对象，通过方法给它初始化speed,size的值，并打印出来。另外，调用加速，减速的方法对速度进行改变。*/</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Suke.day07</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">VehicleTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Vehicle vehicle = <span class="keyword">new</span> Vehicle(<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">            vehicle.printVehicle();</span><br><span class="line">            vehicle.move();</span><br><span class="line">            vehicle.speedUp();</span><br><span class="line">            vehicle.speedDown();</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Vehicle</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> size;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> speed;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Vehicle</span>()</span> &#123; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Vehicle</span>(<span class="params"><span class="built_in">int</span> size, <span class="built_in">int</span> speed</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.size = size;</span><br><span class="line">            <span class="keyword">this</span>.speed = speed;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSize</span>(<span class="params"><span class="built_in">int</span> size</span>)</span> &#123; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">getSize</span>()</span> &#123; <span class="keyword">return</span> size; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSpeed</span>(<span class="params"><span class="built_in">int</span> speed</span>)</span> &#123; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">getSpeed</span>()</span> &#123; <span class="keyword">return</span> speed; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span>() <span class="comment">//构造方法move</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;前方请注意！体积为&#123;0&#125;公斤的大黄蜂正在以速度&#123;1&#125;公里/秒向目标移动！&quot;</span>, size, speed);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speedUp</span>() <span class="comment">//构造方法speedUp</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;加速加速加速+&#123;0&#125;+&#123;1&#125;+.+.+.+..&quot;</span>, ++size, ++size);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speedDown</span>() <span class="comment">//构造方法speedDown</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;减速减速减速-&#123;0&#125;-&#123;1&#125;-.-.-.-..&quot;</span>, --size, --size);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printVehicle</span>() <span class="comment">//打印输出Vehicle类</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Szie: &#123;0&#125;\nSpeed: &#123;1&#125;&quot;</span>, size, speed);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>2．试编写一个函数compute(int a,int b,int sum,int sub,int mul,int quo )，其中sum、sub、mul、quo分别是a，b的和、差、积、商。并编写主函数测试上述函数。提示：和、差、积、商分别采用ref和out形参两种方式实现。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="comment">/*2．试编写一个函数compute(int a,int b,int sum,int sub,int mul,int quo )，</span></span><br><span class="line"><span class="comment"> * 其中sum、sub、mul、quo分别是a，b的和、差、积、商。</span></span><br><span class="line"><span class="comment"> * 并编写主函数测试上述函数。提示：和、差、积、商分别采用ref和out形参两种方式实现。*/</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Suke.day07</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">MathTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> a = <span class="number">2</span>;</span><br><span class="line">            <span class="built_in">int</span> b = <span class="number">4</span>;</span><br><span class="line">            <span class="built_in">int</span> sum = SumValue(<span class="number">2</span>, <span class="keyword">ref</span> b);</span><br><span class="line">            <span class="built_in">int</span> sub = SubValue(<span class="number">2</span>, <span class="keyword">out</span> b);</span><br><span class="line">            <span class="built_in">int</span> mul = MulValue(<span class="keyword">ref</span> a, <span class="number">4</span>);</span><br><span class="line">            <span class="built_in">int</span> quo = QuoValue(<span class="keyword">out</span> a, <span class="number">4</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;和=&#123;0&#125;\n差=&#123;1&#125;\n积=&#123;2&#125;\n商=&#123;3&#125;&quot;</span>,sum,sub,mul,quo);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">SumValue</span>(<span class="params"><span class="built_in">int</span> a, <span class="keyword">ref</span> <span class="built_in">int</span> b</span>) <span class="comment">//和sum，传参b</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> a + b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">SubValue</span>(<span class="params"><span class="built_in">int</span> a, <span class="keyword">out</span> <span class="built_in">int</span> b</span>) <span class="comment">//差sub，输出b=2</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            b = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">return</span> a - b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">MulValue</span>(<span class="params"><span class="keyword">ref</span> <span class="built_in">int</span> a,<span class="built_in">int</span> b</span>) <span class="comment">//积mul，传参a</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> a * b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">QuoValue</span>(<span class="params"><span class="keyword">out</span> <span class="built_in">int</span> a,<span class="built_in">int</span> b</span>) <span class="comment">//商quo，输出a=4</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            a = <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">return</span> a / b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>3．定义一个接口，它含有两个方法：一个方法用于实现两个数中求最小的数，一个方法用于实现在2个数中求最大的数。定义一个类实现这个接口，再定义派生类中，给出方法Max()、方法Min()的实现； 试在主函数中通过委托MyDelegate的对象md来分别调用上述两个方法Max、Min求一个一维数组的最大值及最小值。<br />
+【来源：<a target="_blank" rel="noopener" href="https://python.iitter.com/other/384020.html%EF%BC%8C%E8%BD%AC%E8%BD%BD%E8%AF%B7%E6%B3%A8%E6%98%8E%E3%80%91">https://python.iitter.com/other/384020.html，转载请注明】</a></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="comment">/*3．定义一个接口，它含有两个方法：一个方法用于实现两个数中求最小的数，</span></span><br><span class="line"><span class="comment"> * 一个方法用于实现在2个数中求最大的数。定义一个类实现这个接口，</span></span><br><span class="line"><span class="comment"> * 再定义派生类中，给出方法Max()、方法Min()的实现； </span></span><br><span class="line"><span class="comment"> * 试在主函数中通过委托MyDelegate的对象md来分别调用上述两个方法Max、Min求一个一维数组的最大值及最小值。*/</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Suke.day07</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">DelegateTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            MyClass mc = <span class="keyword">new</span> MyClass();</span><br><span class="line">            MyDelegate md1 = <span class="keyword">new</span> MyDelegate(mc.Max);</span><br><span class="line">            MyDelegate md2 = <span class="keyword">new</span> MyDelegate(mc.Min);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;最大值=&#123;0&#125;\n最小值=&#123;1&#125;&quot;</span>, md1(<span class="number">2</span>, <span class="number">4</span>), md2(<span class="number">2</span>, <span class="number">4</span>));</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">delegate</span> <span class="built_in">int</span> <span class="title">MyDelegate</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span>;<span class="comment">//声明委托</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">MyVirtual</span>  <span class="comment">//重写接口构造方法</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Max</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a &gt; b)</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Min</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a &lt; b)</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">MyVirtual</span>  <span class="comment">//定义接口</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="built_in">int</span> <span class="title">Max</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span>;</span><br><span class="line">        <span class="function"><span class="built_in">int</span> <span class="title">Min</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>定义一个抽象的&quot;Role&quot;类，有用户名，密码，权限等成员变量</li>
+</ol>
+<p>（1）要求尽可能隐藏所有变量，再通过属性对各变量进行读写。再定义一个具有抽象的play()方法，</p>
+<p>该方法只输出用户名，不返回任何值，同时至少定义两个构造方法。</p>
+<p>（2）从Role类派生出一个&quot;Student&quot;类，该类具有Role类的所有成员（构造方法除外），并扩展number成员变量，同时增加一个静态成员变量“telephone”。</p>
+<p>同样要有至少两个构造方法，并定义覆盖play()方法。</p>
+<p>（3）在Main()方法中生成Student的对象,并测试这些对象的方法。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="comment">/*4. 定义一个抽象的&quot;Role&quot;类，有用户名，密码，权限等成员变量</span></span><br><span class="line"><span class="comment">（1）要求尽可能隐藏所有变量，再通过属性对各变量进行读写。再定义一个具有抽象的play()方法，</span></span><br><span class="line"><span class="comment">该方法只输出用户名，不返回任何值，同时至少定义两个构造方法。</span></span><br><span class="line"><span class="comment">（2）从Role类派生出一个&quot;Student&quot;类，该类具有Role类的所有成员（构造方法除外），并扩展number成员变量，同时增加一个静态成员变量“telephone”。</span></span><br><span class="line"><span class="comment">同样要有至少两个构造方法，并定义覆盖play()方法。</span></span><br><span class="line"><span class="comment">（3）在Main()方法中生成Student的对象,并测试这些对象的方法。*/</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Suke.day07</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">RoleTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Student student = <span class="keyword">new</span> Student(<span class="string">&quot;圣仙&quot;</span>,<span class="number">192001</span>,<span class="literal">true</span>,<span class="number">35226</span>);</span><br><span class="line">            student.printRole();</span><br><span class="line">            student.printStudent();</span><br><span class="line">            student.play();</span><br><span class="line">            student.study();</span><br><span class="line">            student.eat();</span><br><span class="line">            Console.ReadKey();  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Student</span> : <span class="title">Role</span> <span class="comment">//继承父类Role</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">int</span> number;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Student</span>()</span>&#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params">Role role,<span class="built_in">int</span> number</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Role = role;</span><br><span class="line">            <span class="keyword">this</span>.number = number;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> password, <span class="built_in">bool</span> power, <span class="built_in">int</span> number</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Name = name;</span><br><span class="line">            Password = password;</span><br><span class="line">            Power = power;</span><br><span class="line">            <span class="keyword">this</span>.number = number;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> Role Role &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Number &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">play</span>() <span class="comment">//重写构造方法</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;执行play()方法: 学生用户已登录&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;执行study()方法: 好好学习，天天向上&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;执行eat()方法: 吃饱再学习&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStudent</span>() <span class="comment">//打印输出Student类</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;执行printStudent()方法: Name=&#123;0&#125;,PassWord=&#123;1&#125;,Power=&#123;2&#125;,Number=&#123;3&#125;&quot;</span>, Name,Password,Power,number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Role</span> <span class="comment">//定义抽象类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> name; <span class="comment">//用户名</span></span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">int</span> password; <span class="comment">//密码</span></span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">bool</span> power; <span class="comment">//权限</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Role</span>()</span> &#123; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Role</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> password, <span class="built_in">bool</span> power</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.password = password;</span><br><span class="line">            <span class="keyword">this</span>.power = power;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Password &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">bool</span> Power &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">play</span>()</span>; <span class="comment">//抽象构造方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printRole</span>() <span class="comment">//打印输出Role类</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;执行printRole()方法: Name=&#123;0&#125;,PassWord=&#123;1&#125;,Power=&#123;2&#125;&quot;</span>, name, password, power);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>5．创建C#控制台应用程序，建立一个点类CzPoint，为其定义两个double类型的私有字段成员x和y，分别表示点的横坐标和纵坐标；对CzPoint类进行相等和不等操作符重载。注：两个坐标点相等，则指它们的横坐标和纵坐标都相等。</p>
+<p>在Main()方法中对两个坐标点是否相同进行测试。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="comment">/*5．创建C#控制台应用程序，建立一个点类CzPoint，为其定义两个double类型的私有字段成员x和y，</span></span><br><span class="line"><span class="comment"> * 分别表示点的横坐标和纵坐标；对CzPoint类进行相等和不等操作符重载。</span></span><br><span class="line"><span class="comment"> * 注：两个坐标点相等，则指它们的横坐标和纵坐标都相等。</span></span><br><span class="line"><span class="comment"> * 在Main()方法中对两个坐标点是否相同进行测试。*/</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Suke.day07</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">CzPointTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            CzPoint p1 = <span class="keyword">new</span> CzPoint(<span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line">            CzPoint p2 = <span class="keyword">new</span> CzPoint(<span class="number">5</span>, <span class="number">4</span>);</span><br><span class="line">            <span class="built_in">string</span> equal = <span class="literal">null</span>;</span><br><span class="line">            equal = (p1 == p2 ? <span class="string">&quot;相等&quot;</span> : <span class="string">&quot;不相等&quot;</span>);</span><br><span class="line">            System.Console.WriteLine(<span class="string">&quot;移动前p1和p2&quot;</span> + equal);</span><br><span class="line">            p1.Move(<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">            equal = (p1 == p2 ? <span class="string">&quot;相等&quot;</span> : <span class="string">&quot;不相等&quot;</span>);</span><br><span class="line">            System.Console.WriteLine(<span class="string">&quot;移动后p1和p2&quot;</span> + equal);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">CzPoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">double</span> x; <span class="comment">//横坐标</span></span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">double</span> y; <span class="comment">//纵坐标</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CzPoint</span>(<span class="params"><span class="built_in">double</span> x, <span class="built_in">double</span> y</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.x = x;</span><br><span class="line">            <span class="keyword">this</span>.y = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">double</span> X &#123; <span class="keyword">get</span>;<span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">double</span> Y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Move</span>(<span class="params"><span class="built_in">double</span> dx, <span class="built_in">double</span> dy</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            x += dx;</span><br><span class="line">            y += dy;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="keyword">operator</span> ==(CzPoint p1, CzPoint p2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p1.x == p2.x &amp;&amp; p1.y == p2.y)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="keyword">operator</span> !=(CzPoint p1, CzPoint p2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p1.x == p2.x &amp;&amp; p1.y == p2.y)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://qz1314233.github.io/2022/04/08/c1/" title="C#上机三" target="_blank" rel="external">https://qz1314233.github.io/2022/04/08/c1/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/qz1314233" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/qz1314233" target="_blank"><span class="text-dark">爱吃乔治的恐龙</span><small class="ml-1x">在校学生 &amp; 技术菜鸟</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/03/14/%E7%AC%94%E8%AE%B03/" title="Java的包机制、JavaDoc命令、用户交互Scanner"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/qz1314233" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'xDlV7MWd8XuSYn7zpPizzzwo-gzGzoHsz',
+    appKey: 'nz61TcsUAWr0Mk1cmj6n782L',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
